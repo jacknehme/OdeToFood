@@ -8,6 +8,7 @@ namespace OdeToFood.Data
     public class InMemoryRestaurantData : IRestaurantData
     {
         readonly List<Restaurant> restaurants;
+
         public InMemoryRestaurantData()
         {
             restaurants = new List<Restaurant>()
@@ -65,6 +66,11 @@ namespace OdeToFood.Data
                 restaurants.Remove(restaurant);
             }
             return restaurant;
+        }
+
+        public int GetCountOfRestaurants()
+        {
+            return restaurants.Count();
         }
     }
 }
